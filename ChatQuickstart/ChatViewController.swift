@@ -183,7 +183,7 @@ class ChatViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @IBAction func pickDocumentAction(_ sender: Any) {
-        let documentPicker: UIDocumentPickerViewController = UIDocumentPickerViewController(documentTypes: ["public.text", "com.microsoft.word.doc","org.openxmlformats.wordprocessingml.document", "com.adobe.pdf"], in: UIDocumentPickerMode.import)
+        let documentPicker: UIDocumentPickerViewController = UIDocumentPickerViewController(documentTypes: ["public.text", "com.microsoft.word.doc","org.openxmlformats.wordprocessingml.document", "com.adobe.pdf"], in: UIDocumentPickerMode.open)
 //        let documentPicker: UIDocumentPickerViewController = UIDocumentPickerViewController(documentTypes: ["public.text"], in: UIDocumentPickerMode.import)
         documentPicker.delegate = self
         documentPicker.modalPresentationStyle = UIModalPresentationStyle.fullScreen
@@ -226,7 +226,7 @@ class ChatViewController: UIViewController, UINavigationControllerDelegate {
                 // Full failure details will be provided through sendMessage's completion.
                 print("Media upload completed")
             }
-            
+
             // Trigger the sending of the message.
             self.generalChannel?.messages?.sendMessage(with: messageOptions,
                                                        completion: { (result, message) in
@@ -733,7 +733,7 @@ extension ChatViewController: ImageSelectionDelegate {
 extension ChatViewController: UIDocumentPickerDelegate
 {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
-        if controller.documentPickerMode == UIDocumentPickerMode.import {
+        if controller.documentPickerMode == UIDocumentPickerMode.open {
             pickedDocUrl = url
             if pickedDocUrl != nil {
                 
