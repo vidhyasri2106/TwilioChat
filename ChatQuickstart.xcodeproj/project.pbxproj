@@ -229,18 +229,20 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChatQuickstart/Pods-ChatQuickstart-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatQuickstart/Pods-ChatQuickstart-frameworks.sh",
 				"${PODS_ROOT}/TwilioChatClient/TwilioChatClient.framework",
+				"${PODS_ROOT}/TwilioChatClient/TwilioChatClient.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioChatClient.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/TwilioChatClient.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatQuickstart/Pods-ChatQuickstart-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatQuickstart/Pods-ChatQuickstart-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
